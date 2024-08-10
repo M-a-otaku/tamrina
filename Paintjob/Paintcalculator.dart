@@ -13,8 +13,8 @@ class PaintJobCalculator {
     return paint.cost * area.areacalc() * location.factor;
   }
 
-  @override
-  String toString() {
-    return "paint is ${paint.name} , location is ${location.name} and total area is ${area.areakol}";
-  }
+  // @override
+  // String toString() {
+  //   return "paint is ${paint.name} , location is ${location.name} and total area is ${area.areakol}";
+  // }
 }
