@@ -14,9 +14,9 @@ void main() {
 
   taavuni.addSemester(title: "SUMMER2026", id: 3);
 
-  taavuni.semester[1].addcorse(title: "alcemy", id: 6, unitcount: 2);
+  taavuni.semester[1].addGeneralcorse(title: "alcemy", id: 6, unitcount: 2, costfactor: 1);
 
-  taavuni.semester[2].addcorse(title: "science", id: 8, unitcount: 3);
+  taavuni.semester[2].addGeneralcorse(title: "science", id: 8, unitcount: 3, costfactor: 1);
 
   taavuni.addStudent(Name: 'ali', studentid: 7, location: shiraz);
 
@@ -25,7 +25,7 @@ void main() {
   taavuni.addStudent(Name: "hasan", studentid: 1, location: ahvaz);
 
   taavuni.addCorseToSemesterById(
-      corsetitle: "suiiiiii", corseid: 3, corsecount: 7, semesterid: 1);
+      corsetitle: "suiiiiii", corseid: 3, corsecount: 7, semesterid: 1, costfactor: 1);
 
   taavuni.semester.first.addStudentToCorseById(
       corseid: 3, studentName: "akbar", studentid: 45, studentlocation: ahvaz);

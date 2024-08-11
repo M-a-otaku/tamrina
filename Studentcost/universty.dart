@@ -1,6 +1,7 @@
 import 'student.dart';
 import 'location.dart';
 import 'semester.dart';
+import 'Corse.dart';
 
 class University {
   // TODO
@@ -37,6 +38,7 @@ class University {
     required int corseid,
     required int corsecount,
     required int semesterid,
+    required int costfactor
   }) {
     final int semesterindex =
         _semester.indexWhere((element) => element.id == semesterid);
@@ -45,7 +47,24 @@ class University {
 
     if (issemesterfound) {
       _semester[semesterindex]
-          .addcorse(title: corsetitle, id: corseid, unitcount: corsecount);
+          .addGeneralcorse(title: corsetitle, id: corseid, unitcount: corsecount, costfactor: costfactor);
+    }
+  }
+
+
+
+  void addStudentToCorseById(
+      {required int corseid,
+      required int semesterid,
+      required int studentid}) {
+    final int corseindex =
+        corse.indexWhere((element) => element.id == corseid);
+
+    final iscorsefound = corseindex != -1;
+
+    if (iscorsefound) {
+      corse[corseindex].addStudent(
+          student);
     }
   }
 
