@@ -1,7 +1,7 @@
+import 'Corse.dart';
 import 'student.dart';
 import 'location.dart';
 import 'semester.dart';
-import 'Corse.dart';
 
 class University {
   // TODO
@@ -15,6 +15,8 @@ class University {
     required this.id,
     required this.location,
   });
+
+  get corse => null;
 
   void addSemester({required String title, required int id}) {
     final Semester newsemester = Semester(id: id, titile: title);
@@ -33,38 +35,34 @@ class University {
   List<Semester> get semester => _semester;
   List<Student> get student => _student;
 
-  void addCorseToSemesterById({
-    required String corsetitle,
-    required int corseid,
-    required int corsecount,
-    required int semesterid,
-    required int costfactor
-  }) {
+  void addCorseToSemesterById(
+      {required String corsetitle,
+      required int corseid,
+      required int corsecount,
+      required int semesterid,
+      required int costfactor}) {
     final int semesterindex =
         _semester.indexWhere((element) => element.id == semesterid);
 
     final issemesterfound = semesterindex != -1;
 
     if (issemesterfound) {
-      _semester[semesterindex]
-          .addGeneralcorse(title: corsetitle, id: corseid, unitcount: corsecount, costfactor: costfactor);
+      _semester[semesterindex].addGeneralcorse(
+          title: corsetitle,
+          id: corseid,
+          unitcount: corsecount,
+          costfactor: costfactor);
     }
   }
 
-
-
   void addStudentToCorseById(
-      {required int corseid,
-      required int semesterid,
-      required int studentid}) {
-    final int corseindex =
-        corse.indexWhere((element) => element.id == corseid);
+      {required int corseid, required int semesterid, required int studentid}) {
+    final int corseindex = corse.indexWhere((element) => element.id == corseid);
 
     final iscorsefound = corseindex != -1;
 
     if (iscorsefound) {
-      corse[corseindex].addStudent(
-          student);
+      corse[corseindex].addStudent(student);
     }
   }
 
